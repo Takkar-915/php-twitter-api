@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../config');
+require __DIR__ . '/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 // エンドポイントを指定
@@ -16,7 +16,6 @@ $query = [
 ];
 
 $url = $api_end_point . "?" . http_build_query($query);
-
 
 // BearerTOKENの読み込み
 $token = $_ENV["BEARERTOKEN"];
@@ -45,3 +44,6 @@ $results = curl_exec($curl);
 
 // 4　必ずセッションを終了させる
 curl_close($curl);
+
+// debug用
+// print json_encode($results, JSON_PRETTY_PRINT);
