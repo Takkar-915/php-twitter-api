@@ -1,5 +1,5 @@
 const getTwitterInformation = async() => {
-    const url = "http://localhost/PHP/twitter-api/server.php";
+    const url = "http://localhost/PHP/twitter-api/backend/puddings.php";
 
     const json = await fetch(url)
         .then(res => {
