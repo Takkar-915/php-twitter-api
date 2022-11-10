@@ -9,7 +9,7 @@ $api_end_point = "https://api.twitter.com/2/tweets/search/recent";
 
 // 検索条件
 $query = [
-    "query" => "ぷりぷりプリン美味しいプリン",
+    "query" => "紡ぐ乙女と大正の月",
     "sort_order" => "recency",
     "expansions" => "author_id",
     "user.fields" => "name,username"
@@ -46,4 +46,4 @@ $results = curl_exec($curl);
 curl_close($curl);
 
 // debug用
-// print json_encode($results, JSON_PRETTY_PRINT);
+print json_encode($results, JSON_PRETTY_PRINT);

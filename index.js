@@ -1,12 +1,13 @@
-let xhr = new XMLHttpRequest();
+const getTwitterInformation = async() => {
+    const url = "http://localhost/PHP/twitter-api/server.php";
 
-xhr.open("GET","./server.php",true);
+    const json = await fetch(url)
+        .then(res => {
+            return res.json()
+        }).catch(error => {
+            console.error("取得失敗",error)
+            return null
+    });
+};
 
-xhr.responseType = "json";
-
-xhr.addEventListener("load", (event) => {
-    console.log(xhr.response);
-    console.log(event.target.response);
-});
-
-xhr.send(null);
+getTwitterInformation();
